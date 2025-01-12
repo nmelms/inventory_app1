@@ -4,6 +4,7 @@ const port = 3000;
 const homeRouter = require("./routes/homeRouter");
 const addRouter = require("./routes/addRouter");
 
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", "./views");
