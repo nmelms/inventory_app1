@@ -1,8 +1,9 @@
 const { Router } = require("express");
 const addRouter = Router();
-const { addGamePost } = require("../controllers/addController");
+const { addGamePost, fetchAllGames } = require("../controllers/addController");
+// TODO: add caching here
 
-addRouter.get("/", (req, res) => res.render("add"));
+addRouter.get("/", fetchAllGames);
 addRouter.post("/", addGamePost);
 
 module.exports = addRouter;

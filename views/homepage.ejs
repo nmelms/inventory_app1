@@ -1,7 +1,28 @@
-<h2>this is the homepage</h2>
-<select name="category" id="category">
-  <option value="RPG">RPG</option>
-  <option value="scifi">SCFI</option>
-  <option value="racing">RACING</option>
-  <option value="action">ACTION</option>
-</select>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Games</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="home-page">
+      <div class="container">
+        <h2>Game Inventory</h2>
+        <% for( let i = 0; i < games.length; i++ ) { %>
+        <div>
+          <p><% games[i].title %></p>
+        </div>
+        <% } %> <%= games[0].title %>
+        <h3><%= subTitle %></h3>
+        <select name="category" id="category">
+          <option value="RPG">RPG</option>
+          <option value="scifi">SCFI</option>
+          <option value="racing">RACING</option>
+          <option value="action">ACTION</option>
+        </select>
+      </div>
+    </main>
+  </body>
+</html>
