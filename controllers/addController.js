@@ -1,8 +1,12 @@
 const db = require("../db/queries");
 
-exports.addGamePost = (req, res) => {
-  const games = db.getAllGames;
-  console.log("add games to db");
+exports.addGamePost = async (req, res) => {
+  try {
+    let res = await db.addGame(req.body.title);
+    console.log("game added:", res);
+  } catch (err) {
+    console.log(err);
+  }
   res.redirect("/");
 };
 
