@@ -5,6 +5,16 @@ async function getAllGames() {
   return rows;
 }
 
+async function deleteGame(gameId) {
+  try {
+    const query = "DELETE FROM games WHERE id = $1";
+    await pool.query(query, [gameId]);
+    console.log(`Game with ID ${gameId} deleted successfully.`);
+  } catch (err) {
+    console.error("Error deleting game:", err);
+  }
+}
+
 async function addGame(
   title,
   releaseDate,
@@ -32,4 +42,5 @@ async function addGame(
 module.exports = {
   getAllGames,
   addGame,
+  deleteGame,
 };

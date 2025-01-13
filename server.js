@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 const homeRouter = require("./routes/homeRouter");
 const addRouter = require("./routes/addRouter");
+const gamesRouter = require("./routes/gamesRouter");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -11,6 +12,7 @@ app.set("views", "./views");
 
 app.use("/", homeRouter);
 app.use("/add", addRouter);
+app.use("/games", gamesRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

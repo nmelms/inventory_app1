@@ -14,7 +14,7 @@
         <% for( let i = 0; i < games.length; i++ ) { %>
         <div class="game-card">
           <p><%= games[i].title %></p>
-          <button>X</button>
+          <button onclick="handleDelete(<%= games[i].id %>)">X</button>
         </div>
         <% } %>
         <h3><%= subTitle %></h3>
